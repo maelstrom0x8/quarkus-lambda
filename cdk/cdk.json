@@ -1,0 +1,16 @@
+{
+  "app": "./mvnw -e -q compile exec:java",
+  "watch":{
+    "include":[
+      "../dorian/target/function.zip",
+      "../dorian/src/main/resources/application.properties"
+    ]
+  },
+  "context": {
+    "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
+    "@aws-cdk/core:stackRelativeExports": true,
+    "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
+    "@aws-cdk/aws-lambda:recognizeVersionProps": true,
+    "@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": true
+  }
+}
