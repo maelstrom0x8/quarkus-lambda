@@ -28,7 +28,7 @@ public class InventoryService {
         Path filePath = Path.of(inventoryFile);
         var logger = System.getLogger(InventoryService.class.getName());
 
-        logger.log(System.Logger.Level.INFO, "Reading inventory data from " + filePath.toAbsolutePath().toString());
+        logger.log(System.Logger.Level.INFO, "Reading inventory data from " + filePath.getFileName());
         if(!Files.exists(filePath))
             return;
 
