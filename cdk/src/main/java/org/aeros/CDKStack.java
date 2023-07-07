@@ -16,9 +16,9 @@ public class CDKStack extends Stack {
 		String asset = System.getenv("FUNCTION_ASSET");
 		// Stack definition
 
-		Function function = Function.Builder.create(this, "quarkus-dorian-service")
+		Function function = Function.Builder.create(this, "quarkus-aeros-service")
 				.code(Code.fromAsset(asset))
-				.functionName("quarkus-lambda-dorian-inventory")
+				.functionName("quarkus-aeros-lambda-inventory")
 				.memorySize(512)
 				.handler("io.quarkus.amazon.lambda.runtime.QuarkusStreamHandler::handleRequest")
 				.runtime(Runtime.JAVA_17)

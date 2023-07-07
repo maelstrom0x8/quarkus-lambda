@@ -2,8 +2,8 @@
   "app": "./mvnw -e -q compile exec:java",
   "watch":{
     "include":[
-      "../dorian/target/function.zip",
-      "../dorian/src/main/resources/application.properties"
+      "../lambda/target/function.zip",
+      "../lambda/src/main/resources/application.properties"
     ]
   },
   "context": {

@@ -26,7 +26,7 @@ public class CDKApp {
         var app = new App();
 
         var appName = "aeros-cdk";
-        Tags.of(app).add("project", "quarkus-aeros-dorian");
+        Tags.of(app).add("project", "quarkus-aeros-lambda");
         Tags.of(app).add("environment","development");
         Tags.of(app).add("application", appName);
 

@@ -6,8 +6,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.aeros</groupId>
-    <artifactId>dorian-aws-cdk</artifactId>
-    <version>0.0.1</version>
+    <artifactId>cdk</artifactId>
+    <version>0.0.2</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
@@ -70,7 +70,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>org.org.aeros.CDKApp</mainClass>
+                    <mainClass>org.aeros.CDKApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

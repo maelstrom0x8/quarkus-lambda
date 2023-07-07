@@ -41,4 +41,8 @@ nb-configuration.xml
 
 # Plugin directory
 /.quarkus/cli/plugins/
-*-self.sh
+*-local.sh
+
+# CDK generated
+cdk.json
+cdk.out
