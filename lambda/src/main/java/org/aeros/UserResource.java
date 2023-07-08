@@ -1,37 +1,36 @@
-package org.aeros.service.inventory;
+package org.aeros;
 
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 @ApplicationScoped
-@Path("/users")
+@Path("/api")
 public class UserResource {
 
-    @Inject
-    InventoryService service;
-
-    private final Map<String, String> users = new HashMap<>();
-    private final String[] usernames = {"harry", "anna", "laura", "josef", "zain", "hajar", "chisom", "kanayo"};
+    private final Map<Integer, String> ids = new HashMap<>();
 
     public UserResource() {
-        for (int i = 0; i < usernames.length; i++) {
-            users.put(usernames[i], UUID.randomUUID().toString());
+        for (int i = 0; i < 10; i++) {
+            ids.put(i, UUID.randomUUID().toString());
         }
     }
 
     @GET
-    @Path("/service-ids")
-    public Map<String, String> getUsers() {
-        return users;
+    @Path("/ids")
+    public Map<Integer, String> getUsers() {
+        return ids;
     }
 
+    @GET
+    @Path("/ids/{id}")
+    public String getUUID(@PathParam("id") Integer id) {
+        return ids.get(id);
+    }
 }
