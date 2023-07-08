@@ -2,11 +2,10 @@
 
 set -e
 
-export FUNCTION_ASSET=dorian/target/function.zip
+export FUNCTION_ASSET=../lambda/target/function.zip
+export CDK_DEPLOY_ACCOUNT= #account_id
+export CDK_DEPLOY_REGION= #region
 
-./mvnw clean
-./mvnw package -f dorian/pom.xml
-./mvnw package -f cdk/pom.xml
-
-cd cdk && cdk deploy --all --require-approval=never
-
+cd lambda && ./mvnw clean package
+echo "Building CDK.."
+cd ../cdk && ./mvnw clean package && cdk deploy --all --require-approval=never
